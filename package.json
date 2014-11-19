@@ -1,6 +1,6 @@
 {
 	"name": "http-cors",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Respond correctly to a CORS request",
 	"main": "src",
 	"keywords": [
