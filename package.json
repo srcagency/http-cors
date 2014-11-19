@@ -2,7 +2,7 @@
 	"name": "http-cors",
 	"version": "1.0.0",
 	"description": "Respond correctly to a CORS request",
-	"main": "src/index.js",
+	"main": "src",
 	"keywords": [
 		"http",
 		"cors"
@@ -14,11 +14,6 @@
 		"type": "git",
 		"url": "https://github.com/srcagency/njs-http-cors.git"
 	},
-	"author": {
-		"name": "Thomas Jensen",
-		"email": "thomas@src.agency",
-		"url": "http://src.agency"
-	},
-	"readmeFilename": "README.md",
+	"author": "Thomas Jensen <thomas@src.agency> (http://src.agency)",
 	"license": "MIT"
 }
