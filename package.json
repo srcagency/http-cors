@@ -1,8 +1,8 @@
 {
 	"name": "http-cors",
-	"version": "1.0.1",
 	"description": "Respond correctly to a CORS request",
-	"main": "src",
+	"version": "1.0.1",
+	"repository": "srcagency/http-cors",
 	"keywords": [
 		"http",
 		"cors"
@@ -10,10 +10,5 @@
 	"dependencies": {
 		"extend": "^2.0.0"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/srcagency/http-cors.git"
-	},
-	"author": "Thomas Jensen <thomas@src.agency> (http://src.agency)",
 	"license": "MIT"
 }
