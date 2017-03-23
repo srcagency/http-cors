@@ -6,7 +6,7 @@ module.exports = Cors;
 
 function Cors( opts ){
 	if (!(this instanceof Cors))
-		return new this(opts);
+		return new Cors(opts);
 
 	extend(this, opts);
 }
