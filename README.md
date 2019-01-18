@@ -15,13 +15,13 @@ const http = require('http')
 const cors = require('http-cors') // use default options
 // const cors = require('http-cors').setup({origin:'example.com'}) // overwrite default options
 
-var server = http.createServer(function(request, response) {
-  if (cors(request, response)) return // this was an OPTIONS request - no further action needed
+http
+  .createServer((req, res) => {
+    if (cors(req, res)) return // this was an OPTIONS request - no further action needed
 
-  // do your things
-})
-
-server.listen(process.env.PORT || 80)
+    // do your things
+  })
+  .listen(80)
 ```
 
 ## License
