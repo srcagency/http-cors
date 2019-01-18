@@ -26,4 +26,4 @@ http
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [src.agency](http://src.agency)
+[MIT](http://opensource.org/licenses/MIT)
