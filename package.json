@@ -2,6 +2,9 @@
 	"name": "http-cors",
 	"description": "Respond correctly to a CORS request",
 	"version": "2.0.0",
+	"scripts": {
+		"test": "node test"
+	},
 	"repository": "srcagency/http-cors",
 	"keywords": [
 		"http",
