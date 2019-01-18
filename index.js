@@ -1,35 +1,36 @@
-'use strict';
+'use strict'
 
-var extend = require('extend');
+function setup({origin = '*', maxAge = 60 * 60 * 24, headers, methods}) {
+	return (request, response) => {
+		const reqOrigin = request.headers.origin
+		const reqHeaders = request.headers['access-control-request-headers']
+		const reqMethod = request.headers['access-control-request-method']
 
-module.exports = Cors;
+		if (typeof reqOrigin !== 'undefined') {
+			// can (validly) be an empty string
+			response.setHeader('Access-Control-Allow-Origin', origin)
+			response.setHeader('Access-Control-Max-Age', maxAge.toString())
+		}
 
-function Cors( opts ){
-	if (!(this instanceof Cors))
-		return new Cors(opts);
+		if (reqHeaders)
+			response.setHeader(
+				'Access-Control-Allow-Headers',
+				headers || reqHeaders
+			)
 
-	extend(this, opts);
+		if (reqMethod)
+			response.setHeader(
+				'Access-Control-Allow-Methods',
+				methods || reqMethod
+			)
+
+		if (request.method === 'OPTIONS') {
+			response.statusCode = 204
+			return true
+		}
+		return false
+	}
 }
 
-Cors.prototype.apply = function( request, response ){
-	var origin = request.headers.origin;
-	var headers = request.headers['access-control-request-headers'];
-	var method = request.headers['access-control-request-method'];
-
-	if (typeof origin !== 'undefined') {
-		// can (validly) be an empty string
-		response.setHeader('Access-Control-Allow-Origin', this.origin || '*');
-		response.setHeader('Access-Control-Max-Age', (this.maxAge || 60 * 60 * 24).toString());
-	}
-
-	if (headers)
-		response.setHeader('Access-Control-Allow-Headers', this.headers || headers);
-
-	if (method)
-		response.setHeader('Access-Control-Allow-Methods', this.methods || method);
-
-	if (request.method === 'OPTIONS') {
-		response.statusCode = 204;
-		return true;
-	}
-};
+module.exports = setup({})
+module.exports.setup = setup

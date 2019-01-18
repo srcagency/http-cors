@@ -7,8 +7,26 @@
 		"http",
 		"cors"
 	],
-	"dependencies": {
-		"extend": "^2.0.0"
+	"dependencies": {},
+	"prettier": {
+		"semi": false,
+		"singleQuote": true,
+		"useTabs": true,
+		"bracketSpacing": false,
+		"trailingComma": "es5",
+		"tabWidth": 4,
+		"overrides": [
+			{
+				"files": "*.md",
+				"options": {
+					"useTabs": false,
+					"tabWidth": 2
+				}
+			}
+		]
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"tape": "^4.9.2"
+	}
 }

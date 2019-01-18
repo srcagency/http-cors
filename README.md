@@ -11,20 +11,17 @@ npm install http-cors
 ## Usage
 
 ```js
-var http = require('http');
-var HttpCors = require('http-cors');
+const http = require('http')
+const cors = require('http-cors') // use default options
+// const cors = require('http-cors').setup({origin:'example.com'}) // overwrite default options
 
-// configure (all allowed - see source for options)
-var cors = new HttpCors();
+var server = http.createServer(function(request, response) {
+  if (cors(request, response)) return // this was an OPTIONS request - no further action needed
 
-var server = http.createServer(function( request, response ){
-	if (cors.apply(request, response))
-		return;	// this was an OPTIONS request - no further action needed
+  // do your things
+})
 
-	// do your things
-});
-
-server.listen(process.env.PORT || 80);
+server.listen(process.env.PORT || 80)
 ```
 
 ## License

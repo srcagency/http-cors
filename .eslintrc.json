@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "parserOptions": {
+    "sourceType": "script",
+    "ecmaVersion": 9
+  },
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "strict": [
+      "error",
+      "safe"
+    ],
+    "prettier/prettier": [
+      "error"
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ]
+  }
+}
